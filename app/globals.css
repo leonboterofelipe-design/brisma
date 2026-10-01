@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply bg-white font-body text-ink antialiased; }
+  h1, h2, h3 { @apply font-display text-navy-900; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-accent; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
