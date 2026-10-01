@@ -7,8 +7,8 @@ export default function Hero1() {
       alt=""
       fill
       priority
-      sizes="100vw"
-      className="object-cover object-[68%_center]"
+      sizes="(min-width: 768px) 100vw, 100vw"
+      className="object-cover object-[50%_38%] md:object-[68%_center]"
     />
   );
 }
