@@ -9,7 +9,7 @@ export default function Team() {
   return (
     <Section id="equipo">
       <SectionHeading title={team.title} text={team.text} />
-      <div className="mt-12 grid gap-8 md:grid-cols-3">
+      <div className="mt-10 grid gap-8 md:mt-12 md:grid-cols-3">
         {team.members.map((m) => (
           <figure key={m.name} className="card flex flex-col overflow-hidden">
             <div className="relative aspect-[4/4.5] bg-navy-800/10">
@@ -22,7 +22,7 @@ export default function Team() {
             <figcaption className="flex flex-1 flex-col p-6">
               <h3 className="text-2xl leading-tight">{m.name}</h3>
               <p className="mt-2 text-sm font-medium text-gold-ink">{m.role}</p>
-              <p className="mt-4 text-sm leading-relaxed text-muted">{m.text}</p>
+              <p className="mt-4 leading-relaxed text-muted">{m.text}</p>
             </figcaption>
           </figure>
         ))}

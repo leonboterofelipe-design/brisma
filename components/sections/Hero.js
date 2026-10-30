@@ -17,10 +17,10 @@ export default function Hero() {
           <h1 className="text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">{hero.title}</h1>
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg">{hero.text}</p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Button href="#contacto">Agendar consulta sin compromiso</Button>
-            <Button href="#proceso" variant="outline">Conocer el proceso</Button>
+            <Button href="#contacto" className="w-full sm:w-auto">Agendar consulta sin compromiso</Button>
+            <Button href="#proceso" variant="outline" className="w-full sm:w-auto">Conocer el proceso</Button>
           </div>
-          <p className="mt-4 text-xs leading-relaxed text-muted sm:text-sm">{hero.note}</p>
+          <p className="mt-4 text-sm leading-relaxed text-muted">{hero.note}</p>
         </div>
         <div className="mx-auto mt-12 max-w-3xl">
           <Takeaways title={summary.title} items={summary.items} />

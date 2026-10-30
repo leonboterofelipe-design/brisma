@@ -3,3 +3,4 @@ node_modules
 .next-recovery*
 .env*
 !.env.example
+.next-*

@@ -81,12 +81,12 @@ export default function GuidePage({ params }) {
           <h2 className="text-3xl leading-tight md:text-4xl">Preguntas frecuentes</h2>
           <div className="mt-4 divide-y divide-line border-y border-line">
             {g.faq.map((item) => (
-              <details key={item.q} className="group py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-navy-900 [&::-webkit-details-marker]:hidden">
+              <details key={item.q} className="group">
+                <summary className="flex min-h-[3.5rem] cursor-pointer list-none items-center justify-between gap-4 py-4 text-base font-semibold text-navy-900 [&::-webkit-details-marker]:hidden">
                   {item.q}
-                  <span aria-hidden className="text-xl text-accent transition-transform group-open:rotate-45">+</span>
+                  <span aria-hidden className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold text-xl leading-none text-gold-ink transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-3 text-muted">{item.a}</p>
+                <p className="max-w-prose pb-5 leading-relaxed text-muted">{item.a}</p>
               </details>
             ))}
           </div>

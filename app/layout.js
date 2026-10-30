@@ -29,7 +29,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${display.variable} ${body.variable}`}>
-      <body className="pb-20 md:pb-0">
+      <body className="pb-24 md:pb-0">
         <JsonLd data={legalService()} />
         <a href="#contenido" className="skip-link">Saltar al contenido</a>
         <Header />

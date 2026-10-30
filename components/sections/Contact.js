@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button';
 import { contact, site } from '@/lib/content';
 import { trackEvent } from '@/lib/analytics';
 
-const field = 'mt-1.5 w-full rounded-lg border border-field bg-white px-3.5 py-3 text-ink transition-colors hover:border-navy-800 focus-visible:border-navy-900';
+const field = 'mt-1.5 w-full rounded-lg border border-field bg-white px-4 py-3.5 text-base font-normal text-ink transition-colors hover:border-navy-800 focus-visible:border-navy-900';
 const optional = <span className="font-normal text-muted"> (opcional)</span>;
 const hasWhatsapp = /^\d{10,15}$/.test(site.whatsapp);
 
@@ -45,19 +45,19 @@ export default function Contact() {
         </div>
 
         <form onSubmit={onSubmit} className="card space-y-5 p-6 text-ink sm:p-8">
-          <label className="block text-sm font-semibold">Nombre completo
+          <label className="block text-base font-semibold">Nombre completo
             <input name="name" required autoComplete="name" className={field} />
           </label>
-          <label className="block text-sm font-semibold">Teléfono o WhatsApp
+          <label className="block text-base font-semibold">Teléfono o WhatsApp
             <input name="phone" type="tel" required autoComplete="tel" className={field} />
           </label>
-          <label className="block text-sm font-semibold">Correo electrónico{optional}
+          <label className="block text-base font-semibold">Correo electrónico{optional}
             <input name="email" type="email" autoComplete="email" className={field} />
           </label>
-          <label className="block text-sm font-semibold">¿Qué necesita?
+          <label className="block text-base font-semibold">¿Qué necesita?
             <select name="interest" className={field}>{contact.interests.map((o) => <option key={o}>{o}</option>)}</select>
           </label>
-          <label className="block text-sm font-semibold">Cuéntenos brevemente{optional}
+          <label className="block text-base font-semibold">Cuéntenos brevemente{optional}
             <textarea name="message" rows={3} className={field} />
           </label>
           <Button type="submit" className="w-full" disabled={status === 'sending'}>

@@ -4,6 +4,8 @@
 
 @layer base {
   html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  /* Nunca permitir desplazamiento horizontal de la página (clip no rompe el header sticky) */
+  html, body { overflow-x: clip; }
   body { @apply bg-white font-body text-ink antialiased; }
   h1, h2, h3 { @apply font-display font-semibold text-navy-900; }
   :focus-visible { @apply outline outline-2 outline-offset-2 outline-navy-900; }
