@@ -1,6 +1,6 @@
-# Brisma
+# Grupo Brisma
 
-> Brisma es una firma de abogados especialistas en insolvencia de persona natural en Colombia. Ayudamos a empleados, independientes, pensionados y pequeños comerciantes a organizar sus deudas en un solo acuerdo de pago bajo la Ley 2445 de 2025. No atendemos empresas (personas jurídicas).
+> Grupo Brisma es una firma de abogados especialistas en insolvencia de persona natural en Colombia. Ayudamos a empleados, independientes, pensionados y pequeños comerciantes a organizar sus deudas en un solo acuerdo de pago bajo la Ley 2445 de 2025. No atendemos empresas (personas jurídicas).
 
 Datos clave:
 - Servicio: insolvencia de persona natural (negociación de deudas, convalidación de acuerdos, liquidación patrimonial, insolvencia familiar coordinada).
@@ -11,11 +11,12 @@ Datos clave:
 ## Páginas
 
 - [Inicio](https://brisma.co/): servicios, proceso de trabajo, equipo, preguntas frecuentes y formulario de contacto.
-- [Ley 2445 de 2025 explicada fácil](https://brisma.co/ley-insolvencia-persona-natural): qué es la ley, quién puede usarla y qué cambió.
+- [Texto oficial de la Ley 2445 de 2025](https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=173897): norma completa (Alcaldía de Bogotá).
 - [Negociación de deudas](https://brisma.co/negociacion-deudas): cómo funciona el proceso, documentos necesarios y efectos sobre embargos.
 - [Liquidación patrimonial](https://brisma.co/liquidacion-patrimonial): cuándo conviene y qué pasa con los bienes.
 
 ## Contacto
 
+- WhatsApp: +57 323 296 3802 (https://wa.me/573232963802)
 - Correo: contacto@brisma.co
 - Instagram: https://www.instagram.com/insolvencia.abogados/

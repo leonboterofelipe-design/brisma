@@ -8,6 +8,7 @@ import ShareButton from '@/components/ui/ShareButton';
 import JsonLd from '@/components/seo/JsonLd';
 import { guides, getGuide } from '@/lib/guides';
 import { faqPage, breadcrumb } from '@/lib/schema';
+import { whatsappUrl } from '@/lib/content';
 
 export const dynamicParams = false;
 
@@ -69,7 +70,7 @@ export default function GuidePage({ params }) {
         <h1 className="mt-6 text-4xl leading-[1.08] md:text-5xl">{g.h1}</h1>
         <p className="mt-6 text-lg leading-relaxed text-ink">{g.intro}</p>
         <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
-          <Button href="/#contacto">Quiero saber si mi caso aplica</Button>
+          <Button href={whatsappUrl()}>Quiero saber si mi caso aplica</Button>
           <ShareButton title={g.h1} />
         </div>
 
@@ -94,8 +95,8 @@ export default function GuidePage({ params }) {
 
         <aside className="card mt-14 p-6 text-center md:p-10">
           <p className="font-display text-3xl font-semibold text-navy-900">¿Hablamos de su caso?</p>
-          <p className="mx-auto mt-3 max-w-md text-muted">La primera conversación es confidencial. Le decimos con honestidad si la ley aplica para usted.</p>
-          <Button href="/#contacto" className="mt-6">Agendar mi consulta</Button>
+          <p className="mx-auto mt-3 max-w-md text-muted">Hablamos de su situación con absoluta reserva. Le decimos con honestidad si la ley aplica para usted.</p>
+          <Button href={whatsappUrl()} className="mt-6">Agendar mi consulta</Button>
         </aside>
 
         <nav aria-label="Guías relacionadas" className="mt-14">

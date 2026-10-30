@@ -20,7 +20,7 @@ export const metadata = {
     type: 'website',
     locale: 'es_CO',
     siteName: site.name,
-    images: [{ url: '/abogados-insolvencia-brisma.png', width: 2078, height: 757, alt: 'Equipo de abogados de insolvencia de Brisma' }],
+    images: [{ url: '/abogados-insolvencia-brisma.png', width: 2078, height: 757, alt: 'Equipo de abogados de insolvencia de Grupo Brisma' }],
   },
   // Google Search Console: definir NEXT_PUBLIC_GSC_VERIFICATION con el código de verificación.
   verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION },

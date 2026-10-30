@@ -4,7 +4,7 @@ export default function Hero1() {
   return (
     <Image
       src="/abogados-insolvencia-brisma.png"
-      alt="Equipo de abogados de insolvencia de Brisma"
+      alt="Equipo de abogados de insolvencia de Grupo Brisma"
       fill
       priority
       sizes="100vw"

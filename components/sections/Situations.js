@@ -1,7 +1,7 @@
 import Section from '@/components/ui/Section';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Button from '@/components/ui/Button';
-import { situations } from '@/lib/content';
+import { situations, whatsappUrl } from '@/lib/content';
 
 export default function Situations() {
   return (
@@ -10,7 +10,7 @@ export default function Situations() {
         <div>
           <SectionHeading title={situations.title} text={situations.text} />
           <p className="mt-8 hidden border-l-2 border-gold pl-4 font-medium text-navy-900 lg:block">{situations.closing}</p>
-          <Button href="#contacto" className="mt-8 hidden lg:inline-flex">Quiero saber si mi caso aplica</Button>
+          <Button href={whatsappUrl()} className="mt-8 hidden lg:inline-flex">Quiero saber si mi caso aplica</Button>
         </div>
         <ul className="grid grid-cols-2 gap-3 sm:gap-4">
           {situations.items.map((t) => (
@@ -22,7 +22,7 @@ export default function Situations() {
         </ul>
         <div className="lg:hidden">
           <p className="border-l-2 border-gold pl-4 font-medium text-navy-900">{situations.closing}</p>
-          <Button href="#contacto" className="mt-6 w-full sm:w-auto">Quiero saber si mi caso aplica</Button>
+          <Button href={whatsappUrl()} className="mt-6 w-full sm:w-auto">Quiero saber si mi caso aplica</Button>
         </div>
       </div>
     </Section>

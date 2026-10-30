@@ -1,7 +1,7 @@
 import Section from '@/components/ui/Section';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Button from '@/components/ui/Button';
-import { process } from '@/lib/content';
+import { process, whatsappUrl } from '@/lib/content';
 
 export default function Process() {
   return (
@@ -20,7 +20,7 @@ export default function Process() {
           </li>
         ))}
       </ol>
-      <Button href="#contacto" className="mt-12 w-full sm:w-auto">Empezar con la consulta</Button>
+      <Button href={whatsappUrl()} className="mt-12 w-full sm:w-auto">Empezar con la consulta</Button>
     </Section>
   );
 }
