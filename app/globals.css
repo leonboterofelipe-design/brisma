@@ -5,7 +5,15 @@
 @layer base {
   html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
   body { @apply bg-white font-body text-ink antialiased; }
-  h1, h2, h3 { @apply font-display text-navy-900; }
-  :focus-visible { @apply outline outline-2 outline-offset-2 outline-accent; }
+  h1, h2, h3 { @apply font-display font-semibold text-navy-900; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-navy-900; }
+  .on-dark :focus-visible { @apply outline-gold; }
+}
+
+@layer components {
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.14em] text-gold-ink sm:text-sm; }
+  .skip-link { @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-navy-900 focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-white; }
+  /* Tarjeta: borde dorado fino, franja dorada inferior y sombra suave */
+  .card { @apply rounded-2xl border border-gold/30 border-b-4 border-b-gold bg-white shadow-[0_12px_30px_-14px_rgba(11,37,69,0.25)]; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

@@ -11,18 +11,18 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur">
       <Container className="flex h-16 items-center justify-between">
-        <a href="#" className="font-display text-2xl font-semibold tracking-wide text-navy-900">{site.name}</a>
+        <a href="/" className="font-display text-3xl font-semibold text-navy-900">{site.name}</a>
 
-        <nav aria-label="Principal" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Principal" className="hidden items-center gap-7 lg:flex">
           {nav.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm text-muted hover:text-navy-900">{l.label}</a>
+            <a key={l.href} href={l.href} className="py-2 text-sm text-muted transition-colors hover:text-navy-900">{l.label}</a>
           ))}
-          <Button href="#contacto" className="!py-2.5">Agendar consulta</Button>
+          <Button href="/#contacto" className="!py-2.5">Agendar consulta</Button>
         </nav>
 
         <button
           type="button"
-          className="p-2 md:hidden"
+          className="p-2 lg:hidden"
           aria-expanded={open}
           aria-controls="menu-movil"
           aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
@@ -35,12 +35,12 @@ export default function Header() {
       </Container>
 
       {open && (
-        <nav id="menu-movil" aria-label="Móvil" className="border-t border-line bg-white md:hidden">
+        <nav id="menu-movil" aria-label="Móvil" className="border-t border-line bg-white lg:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {nav.map((l) => (
               <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="py-2 text-navy-900">{l.label}</a>
             ))}
-            <Button href="#contacto" onClick={() => setOpen(false)} className="mt-2">Agendar consulta</Button>
+            <Button href="/#contacto" onClick={() => setOpen(false)} className="mt-2">Agendar consulta</Button>
           </Container>
         </nav>
       )}

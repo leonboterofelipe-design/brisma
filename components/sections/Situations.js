@@ -1,14 +1,16 @@
 import Section from '@/components/ui/Section';
 import SectionHeading from '@/components/ui/SectionHeading';
+import Button from '@/components/ui/Button';
 import { situations } from '@/lib/content';
 
 export default function Situations() {
   return (
-    <Section>
+    <Section tone="paper">
       <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
         <div>
           <SectionHeading title={situations.title} text={situations.text} />
-          <p className="mt-8 border-l-2 border-accent pl-4 font-medium text-navy-900">{situations.closing}</p>
+          <p className="mt-8 border-l-2 border-gold pl-4 font-medium text-navy-900">{situations.closing}</p>
+          <Button href="#contacto" className="mt-8">Quiero saber si mi caso aplica</Button>
         </div>
         <ul className="divide-y divide-line border-y border-line">
           {situations.items.map((t) => (

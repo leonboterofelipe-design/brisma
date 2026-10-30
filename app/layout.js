@@ -1,26 +1,43 @@
-import { Newsreader, Public_Sans } from 'next/font/google';
+import { Cormorant_Garamond, Poppins } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import MobileCta from '@/components/layout/MobileCta';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
-import { site } from '@/lib/content';
+import Analytics from '@/components/seo/Analytics';
+import JsonLd from '@/components/seo/JsonLd';
+import { site, home } from '@/lib/content';
+import { legalService } from '@/lib/schema';
 import './globals.css';
 
-const display = Newsreader({ subsets: ['latin'], variable: '--font-display', display: 'swap' });
-const body = Public_Sans({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
+const display = Cormorant_Garamond({ subsets: ['latin'], weight: ['500', '600', '700'], variable: '--font-display', display: 'swap' });
+const body = Poppins({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-body', display: 'swap' });
 
 export const metadata = {
-  title: `${site.name} | Abogados de insolvencia para personas y empresas`,
-  description: 'Abogados especialistas en insolvencia. Negociamos con sus acreedores, frenamos embargos y reorganizamos sus deudas. Primera consulta confidencial.',
+  metadataBase: new URL(site.url),
+  title: home.metaTitle,
+  description: home.metaDescription,
+  openGraph: {
+    type: 'website',
+    locale: 'es_CO',
+    siteName: site.name,
+    images: [{ url: '/abogados-insolvencia-brisma.png', width: 2078, height: 757, alt: 'Equipo de abogados de insolvencia de Brisma' }],
+  },
+  // Google Search Console: definir NEXT_PUBLIC_GSC_VERIFICATION con el código de verificación.
+  verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${display.variable} ${body.variable}`}>
-      <body>
+      <body className="pb-20 md:pb-0">
+        <JsonLd data={legalService()} />
+        <a href="#contenido" className="skip-link">Saltar al contenido</a>
         <Header />
-        <main>{children}</main>
+        <main id="contenido" tabIndex={-1} className="focus:outline-none">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <MobileCta />
+        <Analytics />
       </body>
     </html>
   );

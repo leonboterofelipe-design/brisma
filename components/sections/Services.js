@@ -1,6 +1,9 @@
+import Link from 'next/link';
 import Section from '@/components/ui/Section';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { services } from '@/lib/content';
+
+const linkCls = 'mt-5 inline-block text-sm font-semibold text-navy-900 underline decoration-gold underline-offset-4';
 
 export default function Services() {
   const [main, ...others] = services.items;
@@ -8,8 +11,8 @@ export default function Services() {
     <Section id="servicios" tone="dark">
       <SectionHeading title={services.title} text={services.text} dark />
       <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <article className="border-t-2 border-gold bg-white p-6 md:col-span-2 md:p-8 lg:row-span-2">
-          <h3 className="font-display text-2xl">{main.title}</h3>
+        <article className="card p-6 md:col-span-2 md:p-8 lg:row-span-2">
+          <h3 className="text-2xl">{main.title}</h3>
           <p className="mt-3 max-w-2xl leading-relaxed text-muted">{main.text}</p>
           <ul className="mt-6 space-y-3 border-t border-line pt-5">
             {main.points.map((point) => (
@@ -18,14 +21,19 @@ export default function Services() {
               </li>
             ))}
           </ul>
-          <a href="#contacto" className="mt-7 inline-block text-sm font-semibold text-navy-900 underline decoration-gold underline-offset-4">Evaluar mi caso</a>
+          <div className="flex flex-wrap gap-x-6">
+            <a href="#contacto" className={`${linkCls} !mt-7`}>Evaluar mi caso</a>
+            <Link href={main.href} className={`${linkCls} !mt-7`}>Cómo funciona</Link>
+          </div>
         </article>
 
         {others.map((service) => (
-          <article key={service.title} className="border-t border-line bg-white p-6">
-            <h3 className="font-display text-xl">{service.title}</h3>
+          <article key={service.title} className="card p-6">
+            <h3 className="text-xl">{service.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted">{service.text}</p>
-            <a href="#contacto" className="mt-5 inline-block text-sm font-semibold text-navy-900 underline decoration-gold underline-offset-4">Consultar</a>
+            {service.href
+              ? <Link href={service.href} className={linkCls}>Saber más</Link>
+              : <a href="#contacto" className={linkCls}>Consultar</a>}
           </article>
         ))}
       </div>

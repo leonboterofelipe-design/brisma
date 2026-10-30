@@ -1,20 +1,28 @@
+import Image from 'next/image';
 import Section from '@/components/ui/Section';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { team } from '@/lib/content';
 
+const initials = (name) => name.split(' ').slice(0, 2).map((w) => w[0]).join('');
+
 export default function Team() {
   return (
-    <Section id="equipo" tone="paper">
-      <SectionHeading title={team.title} />
+    <Section id="equipo">
+      <SectionHeading title={team.title} text={team.text} />
       <div className="mt-12 grid gap-8 md:grid-cols-3">
-        {team.members.map((m, i) => (
-          <figure key={i} className="bg-white">
-            {/* Reemplazar por next/image con la foto real en /public/team */}
-            <div className="flex aspect-[4/4.5] items-center justify-center bg-navy-800/10 text-sm text-muted">Foto profesional</div>
-            <figcaption className="border-t-2 border-accent p-5">
-              <p className="font-display text-xl text-navy-900">{m.name}</p>
-              <p className="text-sm text-muted">{m.role}</p>
-              <p className="mt-3 text-sm italic">“{m.quote}”</p>
+        {team.members.map((m) => (
+          <figure key={m.name} className="card flex flex-col overflow-hidden">
+            <div className="relative aspect-[4/4.5] bg-navy-800/10">
+              {m.photo ? (
+                <Image src={m.photo} alt={`${m.name}, ${m.role.split(' · ')[0].toLowerCase()} especialista en insolvencia`} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover object-top" />
+              ) : (
+                <span aria-hidden className="flex h-full items-center justify-center font-display text-6xl text-gold">{initials(m.name)}</span>
+              )}
+            </div>
+            <figcaption className="flex flex-1 flex-col p-6">
+              <h3 className="text-2xl leading-tight">{m.name}</h3>
+              <p className="mt-2 text-sm font-medium text-gold-ink">{m.role}</p>
+              <p className="mt-4 text-sm leading-relaxed text-muted">{m.text}</p>
             </figcaption>
           </figure>
         ))}
