@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import ShareButton from '@/components/ui/ShareButton';
 import { nav, site } from '@/lib/content';
@@ -12,7 +13,9 @@ export default function Footer() {
     <footer className="on-dark bg-navy-950 text-sm text-white/75">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 md:py-16 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-12">
         <div className="sm:col-span-2 lg:col-span-1">
-          <Link href="/" className="font-display text-3xl font-semibold text-white">{site.name}</Link>
+          <Link href="/" className="inline-block">
+            <Image src="/logo-brisma-abogados-blanco.png" alt={site.logoAlt} width={1054} height={142} className="h-9 w-auto" />
+          </Link>
           <p className="mt-3 max-w-xs leading-relaxed">Abogados de insolvencia para personas naturales en Colombia. Le ayudamos a salir de sus deudas con un acuerdo que sí puede cumplir.</p>
           <ShareButton className="mt-5 text-white" />
         </div>

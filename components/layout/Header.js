@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
 import { nav, site, whatsappUrl } from '@/lib/content';
@@ -13,18 +14,20 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur">
       <Container className="flex h-[4.25rem] items-center justify-between">
-        <a href="/" className="font-display text-3xl font-semibold text-navy-900">{site.name}</a>
+        <a href="/" className="flex shrink-0 items-center py-2">
+          <Image src="/logo-brisma-abogados.png" alt={site.logoAlt} width={1054} height={142} priority className="h-7 w-auto sm:h-8 xl:h-9" />
+        </a>
 
-        <nav aria-label="Principal" className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="Principal" className="hidden items-center gap-6 xl:flex">
           {nav.map((l) => (
-            <a key={l.href} href={l.href} {...external(l.href)} className="py-2 text-sm text-muted transition-colors hover:text-navy-900">{l.label}</a>
+            <a key={l.href} href={l.href} {...external(l.href)} className="whitespace-nowrap py-2 text-sm text-muted transition-colors hover:text-navy-900">{l.label}</a>
           ))}
-          <Button href={whatsappUrl()} className="!min-h-0 !py-2.5">Agendar consulta</Button>
+          <Button href={whatsappUrl()} className="!min-h-0 whitespace-nowrap !py-2.5">Agendar consulta</Button>
         </nav>
 
         <button
           type="button"
-          className="-mr-2 flex min-h-12 items-center gap-2.5 rounded-full px-3 text-sm font-semibold text-navy-900 lg:hidden"
+          className="-mr-2 flex min-h-12 items-center gap-2.5 rounded-full px-3 text-sm font-semibold text-navy-900 xl:hidden"
           aria-expanded={open}
           aria-controls="menu-movil"
           onClick={() => setOpen(!open)}
@@ -39,7 +42,7 @@ export default function Header() {
       </Container>
 
       {open && (
-        <nav id="menu-movil" aria-label="Móvil" className="border-t border-line bg-white lg:hidden">
+        <nav id="menu-movil" aria-label="Móvil" className="border-t border-line bg-white xl:hidden">
           <Container className="flex flex-col divide-y divide-line py-2">
             {nav.map((l) => (
               <a key={l.href} href={l.href} {...external(l.href)} onClick={() => setOpen(false)} className="py-4 text-lg font-medium text-navy-900">{l.label}</a>
